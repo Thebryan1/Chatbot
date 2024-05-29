@@ -1,33 +1,42 @@
-/* Estilos para el botón de abrir modal */
-.chat-button {
-    font-size: 16px;
-    padding: 10px 20px;
-    cursor: pointer;
+/* Estilos para el ícono del chat */
+.chat-icon {
     position: fixed;
     bottom: 20px;
     left: 20px;
+    cursor: pointer;
     z-index: 10;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    animation: bounce 2s infinite;
 }
 
-.chat-button:hover {
-    background-color: #0056b3;
+.chat-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Estilos para el modal */
 .modal {
-    display: none; /* Ocultar por defecto */
-    position: fixed; /* Fijar la posición */
-    z-index: 9; /* Colocarlo encima de otros elementos */
-    bottom: 20px;
+    display: none;
+    position: fixed;
+    z-index: 9;
+    bottom: 70px;
     left: 20px;
-    width: 300px; /* Ancho del modal */
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo con transparencia */
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    overflow: hidden; /* Ocultar desbordamiento */
+    overflow: hidden;
 }
 
 /* Contenido del modal */
@@ -35,6 +44,7 @@
     background-color: #fefefe;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Botón de cerrar */
@@ -82,7 +92,28 @@ button:hover {
     background-color: #0056b3;
 }
 
-p {
-    font-size: 16px;
+#chat-box {
+    max-height: 300px;
+    overflow-y: auto;
     margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.chat-message {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #eee;
+    align-self: flex-start;
 }
