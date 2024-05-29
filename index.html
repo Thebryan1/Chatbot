@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Bot</title>
+    <link rel="stylesheet" href="style.css">
     <script>
         async function enviarMensaje() {
             const mensaje = document.getElementById('mensaje').value;
-            const respuesta = await fetch('http://127.0.0.1:5000/chat', {
+            const respuesta = await fetch('/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -17,13 +18,29 @@
             const datos = await respuesta.json();
             document.getElementById('respuesta').innerText = datos.respuesta;
         }
+
+        function abrirModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
     </script>
 </head>
 <body>
-    <h1>Chat Bot</h1>
-    <input type="text" id="mensaje" placeholder="Escribe tu mensaje">
-    <button onclick="enviarMensaje()">Enviar</button>
-    <p id="respuesta"></p>
+    <button class="chat-button" onclick="abrirModal()">Chat</button>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h1>Chat Bot</h1>
+            <div class="chat-container">
+                <input type="text" id="mensaje" placeholder="Escribe tu mensaje">
+                <button onclick="enviarMensaje()">Enviar</button>
+                <p id="respuesta"></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
-

@@ -1,0 +1,89 @@
+/* Estilos para el botón de abrir modal */
+.chat-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.chat-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Fijar la posición */
+    z-index: 9; /* Colocarlo encima de otros elementos */
+    bottom: 20px;
+    left: 20px;
+    width: 300px; /* Ancho del modal */
+    background-color: rgb(0, 0, 0); /* Color de fondo negro */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo con transparencia */
+    border-radius: 10px;
+    overflow: hidden; /* Ocultar desbordamiento */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Botón de cerrar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el chat */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 10px;
+}
