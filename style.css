@@ -1,28 +1,42 @@
+/* Estilos para el saludo sobre la cabeza del icono */
+#chat-greeting {
+    position: absolute;
+    bottom: calc(100% + 10px); /* Justo encima del icono */
+    right: 20px; /* Ajusta según tu diseño */
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 10;
+}
+
 /* Estilos para el ícono del chat */
 .chat-icon {
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
     cursor: pointer;
     z-index: 10;
 }
 
 .chat-icon img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 }
 
 /* Estilos para el modal */
 .modal {
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 9;
-    bottom: 70px;
-    left: 20px;
     width: 300px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    top: 20px; /* Ajusta según sea necesario */
+    right: 20px; /* Ajustado para estar al lado del icono */
 }
 
 /* Contenido del modal */
@@ -50,8 +64,7 @@
 
 /* Estilos para el chat */
 .chat-container {
-    display: flex;
-    flex-direction: column;
+    position: relative;
 }
 
 input[type="text"] {
@@ -102,23 +115,6 @@ button:hover {
 .bot-message {
     background-color: #eee;
     align-self: flex-start;
-}
-
-/* Animación de rebote */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
-.bounce {
-    animation: bounce 2s infinite;
 }
 
 /* Animación de salto hacia adelante */
