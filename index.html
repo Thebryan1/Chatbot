@@ -7,22 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="chat-icon" onclick="openModal()">
-        <img src="https://img.icons8.com/color/48/000000/lion.png" alt="León Chat" id="lion-icon">
-    </div>
-    
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h1>León Chat Bot</h1>
-            <div class="chat-container">
+    <div class="chat-container" id="chat-container">
+        <!-- Div para el saludo sobre la cabeza del icono -->
+        <div id="chat-greeting">Hola, soy LyonBot</div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h1>León Chat Bot</h1>
+                <div class="chat-box" id="chat-box"></div>
                 <input type="text" id="message" placeholder="Escribe tu mensaje">
                 <button onclick="sendMessage()">Enviar</button>
-                <div id="chat-box"></div>
+                <button onclick="restartChat()">Reiniciar</button>
             </div>
         </div>
-    </div>
 
+        <!-- Ícono del chat -->
+        <div class="chat-icon" id="chat-icon" onclick="openModal()" onmousedown="startDrag(event)">
+            <img src="https://www.gifsanimados.org/data/media/1322/leon-imagen-animada-0096.gif" alt="León Chat" id="lion-icon">
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
