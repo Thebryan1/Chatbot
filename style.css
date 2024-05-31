@@ -5,25 +5,11 @@
     left: 20px;
     cursor: pointer;
     z-index: 10;
-    animation: bounce 2s infinite;
 }
 
 .chat-icon img {
     width: 50px;
     height: 50px;
-}
-
-/* Animación de rebote */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
 }
 
 /* Estilos para el modal */
@@ -117,3 +103,21 @@ button:hover {
     background-color: #eee;
     align-self: flex-start;
 }
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
