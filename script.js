@@ -1,11 +1,13 @@
-// Función para abrir el modal
+// Función para abrir el modal y animar el león
 function openModal() {
     document.getElementById('modal').style.display = 'block';
+    document.getElementById('lion-icon').classList.add('bounce');
 }
 
-// Función para cerrar el modal
+// Función para cerrar el modal y detener la animación del león
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
+    document.getElementById('lion-icon').classList.remove('bounce');
 }
 
 // Función para manejar la lógica del chatbot
