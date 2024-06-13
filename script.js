@@ -18,10 +18,28 @@ function openModal() {
 // Función para enviar el mensaje inicial
 function sendInitialMessage() {
     const chatBox = document.getElementById('chat-box');
+    
+    // Mensaje inicial del bot
     const botMessage = document.createElement('div');
     botMessage.classList.add('chat-message', 'bot-message');
-    botMessage.textContent = "Hola, soy LyonBot";
+    botMessage.textContent = "Hola, soy LyonBot. Aquí tienes algunas preguntas frecuentes que puedes hacerme:";
     chatBox.appendChild(botMessage);
+    
+    // Añadir menú de preguntas frecuentes
+    const faqMenu = document.createElement('div');
+    faqMenu.classList.add('chat-message', 'bot-message');
+    faqMenu.innerHTML = `
+        <ul>
+            <li>¿Cuál es la misión de la Municipalidad?</li>
+            <li>¿Cuál es la visión de la Municipalidad?</li>
+            <li>¿Cómo puedo obtener ayuda?</li>
+            <li>Saludar</li>
+            <li>Despedirse</li>
+        </ul>
+    `;
+    chatBox.appendChild(faqMenu);
+
+    // Animación del mensaje inicial
     botMessage.classList.add('jump');
 }
 
