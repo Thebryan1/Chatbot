@@ -4,11 +4,11 @@ const responses = {
     help: ['¿En qué puedo ayudarte?', 'Dime cómo puedo ayudarte.', 'Estoy aquí para ayudarte.'],
     mission: ['La misión de la Municipalidad de San Jerónimo es: "La Municipalidad de San Jerónimo, es una entidad moderna y competitiva, de reconocida imagen y referente Regional, que impulsa la descentralización a través de la Red de Municipalidades del Valle Sur; incorporando su planeación y gestión local, la participación activa y fiscalización de los ciudadanos y ciudadanas; se sustenta en un modo de gestión con acciones permanentes de coordinación, control, monitoreo y evaluación del personal, con la implementación de programas innovadores de simplificación de procedimientos, que permita agilizar y mejorar los procesos burocráticos; con autoridades y funcionarios capacitados y honestos, liderando el desarrollo local con profesionalismo, transparencia, vocación de servicio e identidad institucional."'],
     vision: ['La visión de la Municipalidad de San Jerónimo es: "Somos una institución al servicio de la comunidad, responsable de generar políticas adecuadas para el emprendimiento de las capacidades empresariales, sociales y políticas; promotora del desarrollo y bienestar del territorio, mediante la administración eficiente y transparente de los recursos públicos y aprovechamiento las oportunidades de las actividades estratégicas como el comercio, turismo recreativo – gastronómico y la agricultura ecológica; haciendo de San Jerónimo un Municipio Líder y competitivo, en el que se puede vivir con dignidad."'],
-    siga: [
-        'SIGA-MEF es el Sistema Integrado de Gestión Administrativa del Ministerio de Economía y Finanzas del Perú. Es una herramienta diseñada para apoyar la gestión administrativa y presupuestaria de las entidades del sector público.',
-        'Funciones y características principales de SIGA-MEF:',
-        'Beneficios de SIGA-MEF:',
-        'Uso y Acceso:'
+    siga: 'SIGA-MEF es el Sistema Integrado de Gestión Administrativa del Ministerio de Economía y Finanzas del Perú. Es una herramienta diseñada para apoyar la gestión administrativa y presupuestaria de las entidades del sector público. Aquí tienes algunas opciones para obtener más información:',
+    siga_options: [
+        'Funciones y características principales de SIGA-MEF',
+        'Beneficios de SIGA-MEF',
+        'Uso y Acceso de SIGA-MEF'
     ],
     siga_details: {
         features: '1. **Funciones y características principales de SIGA-MEF**:\n- **Gestión Presupuestaria**: Permite la formulación, ejecución y seguimiento del presupuesto de las entidades públicas.\n- **Gestión Administrativa**: Automatiza procesos administrativos como la gestión de bienes, servicios, recursos humanos y patrimonio.\n- **Transparencia y Control**: Promueve la transparencia en el uso de los recursos públicos mediante la generación de informes y reportes.',
@@ -111,11 +111,11 @@ function getBotResponse(message) {
         return responses.vision[Math.floor(Math.random() * responses.vision.length)];
     } else if (message.includes('siga')) {
         return `
-            <p>${responses.siga[0]}</p>
+            <p>${responses.siga}</p>
             <ul>
-                <li onclick="showSigaDetail('features')">${responses.siga[1]}</li>
-                <li onclick="showSigaDetail('benefits')">${responses.siga[2]}</li>
-                <li onclick="showSigaDetail('access')">${responses.siga[3]}</li>
+                <li onclick="showSigaDetail('features')">${responses.siga_options[0]}</li>
+                <li onclick="showSigaDetail('benefits')">${responses.siga_options[1]}</li>
+                <li onclick="showSigaDetail('access')">${responses.siga_options[2]}</li>
             </ul>
         `;
     } else {
